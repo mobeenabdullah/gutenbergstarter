@@ -44,7 +44,11 @@ registerBlockType("mytheme-blocks/secondblock", {
             formattingControls={['bold']}
         />
     },
-    save: (props) => {
-        return <p>Saved content</p>;
+    save: ({ attributes }) => {
+        const { content } = attributes;
+        return <RichText.Content
+            tagName="p"
+            value={content}
+        />;
     },
 });
