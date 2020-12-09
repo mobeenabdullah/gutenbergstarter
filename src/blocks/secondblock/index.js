@@ -26,7 +26,9 @@ registerBlockType("mytheme-blocks/secondblock", {
     keywords: [__("video", "mytheme-blocks"), __("iframe", "mytheme-blocks")],
     attributes: {
         content: {
-            type: 'string'
+            type: 'string',
+            source: 'html',
+            selector: 'p'
         }
     },
     edit: ({ className, attributes, setAttributes }) => {
