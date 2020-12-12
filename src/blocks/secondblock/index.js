@@ -1,8 +1,8 @@
 import "./styles.editor.scss";
 import { registerBlockType } from "@wordpress/blocks";
 import { __ } from "@wordpress/i18n";
-import { RichText, BlockControls, AlignmentToolbar } from '@wordpress/editor';
-import { Toolbar, DropdownMenu } from '@wordpress/components';
+import { RichText, BlockControls, InspectorControls, AlignmentToolbar } from '@wordpress/editor';
+import { PanelBody, ToggleControl } from '@wordpress/components';
 //import { Fragment } from "react";
 
 registerBlockType("mytheme-blocks/secondblock", {
@@ -48,6 +48,11 @@ registerBlockType("mytheme-blocks/secondblock", {
         }
         return (
             <>
+                <InspectorControls>
+                    <PanelBody title={__('Panel', 'mytheme-blocks')}>
+                        <ToggleControl label='soehtij' onChange={v => console.log(v) } />
+                    </PanelBody>
+                </InspectorControls>
                 <BlockControls>
                     <AlignmentToolbar value={ alignment  } onChange={ onChangeAlignment } />
                 </BlockControls>
